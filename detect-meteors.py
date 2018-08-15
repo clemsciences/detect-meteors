@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 """
 
@@ -192,28 +191,25 @@ if __name__ == "__name__":
         meteor_std = np.std(meteor_power)
         noise_std = np.std(noise_power)
 
-        """
-        pl.subplot(1,4,1)
-        pl.plot(t, signal_power)
-        pl.subplot(1,4,2)
-        pl.plot(t, meteor_power)
-        pl.ylim([0,1000])
-        pl.subplot(1,4,3)
-        pl.plot(t, noise_power)
-        pl.ylim([0,1000])    
-        pl.subplot(1,4,4)
-        pl.plot(t, power_ratio)
-        pl.ylim([0,1000])    
-        """
+        # pl.subplot(1,4,1)
+        # pl.plot(t, signal_power)
+        # pl.subplot(1,4,2)
+        # pl.plot(t, meteor_power)
+        # pl.ylim([0,1000])
+        # pl.subplot(1,4,3)
+        # pl.plot(t, noise_power)
+        # pl.ylim([0,1000])
+        # pl.subplot(1,4,4)
+        # pl.plot(t, power_ratio)
+        # pl.ylim([0,1000])
 
         # Find high energy events from power ratio
-        '''
-        DETECTION_THRESHOLD = 1000.0
-        detections = [(t[i],v) for (i,v) in enumerate(power_ratio) if v > DETECTION_THRESHOLD]
-        print("Events detected from power ratio:")
-        for (x,y) in detections:
-            print('{}: {}'.format(hhmmss(x),y))
-        '''
+
+        # DETECTION_THRESHOLD = 1000.0
+        # detections = [(t[i],v) for (i,v) in enumerate(power_ratio) if v > DETECTION_THRESHOLD]
+        # print("Events detected from power ratio:")
+        # for (x,y) in detections:
+        #     print('{}: {}'.format(hhmmss(x),y))
 
         # Find high energy events from deviation
         DETECTION_THRESHOLD = 1.0

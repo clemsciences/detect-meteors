@@ -13,8 +13,13 @@ import itertools
 from timeit import default_timer as timer
 
 
-def hhmmss(t):
-    s = t
+def hhmmss(seconds):
+    """
+    Display seconds in human-readable time
+    :param seconds:
+    :return: str
+    """
+    s = seconds
     m = int(s // 60)
     s = s - m * 60
     h = int(m // 60)
@@ -30,15 +35,26 @@ def ranges(i):
 
 
 def power(samples):
+    """
+    It is a kind of weighted sum of squares
+    :param samples:
+    :return:
+    """
     p = np.cumsum(np.square(samples))
     return p / len(samples)
 
 
 def fixup_wave(wave, samplerate):
+    """
+
+    :param wave:
+    :param samplerate:
+    :return:
+    """
     # Step 1: Remove wrap by step size
     wrap = 2
     correction = [0] * len(wave)
-    for (i, s) in enumerate(wave[0:-1]):
+    for i, s in enumerate(wave[0:-1]):
         d_upper = abs(wave[i + 1] + wrap - wave[i])
         d_mid = abs(wave[i + 1] - wave[i])
         d_lower = abs(wave[i + 1] - wrap - wave[i])
